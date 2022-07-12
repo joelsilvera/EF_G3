@@ -23,7 +23,7 @@
     </head>
     <body>
         <div class='container'>
-
+            <jsp:include page="includes/navbar.jsp"/>
             <div class="row mb-4">
                 <div class="col"></div>
                 <div class="col-md-6">

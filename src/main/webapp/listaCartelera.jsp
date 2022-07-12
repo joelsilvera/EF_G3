@@ -5,7 +5,6 @@
   Time: 13:42
   To change this template use File | Settings | File Templates.
 --%>
-
 <%@page import="java.util.ArrayList"%>
 <%@ page import="Beans.Cartelera" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -26,7 +25,9 @@
     </head>
     <body>
         <div class='container'>
-
+            <jsp:include page="includes/navbar.jsp">
+                <jsp:param name="currentPage" value="emp" />
+            </jsp:include>
             <div class="row mb-5 mt-4">
                 <div class="col-lg-6">
                     <h1 class=''>Cartelera</h1>
