@@ -47,7 +47,7 @@
     </head>
     <body>
         <video src="https://static.videezy.com/system/resources/previews/000/011/889/original/film_035_-_4K_res.mp4" autoplay="true" muted="true" loop="true" poster="https://e00-elmundo.uecdn.es/assets/multimedia/imagenes/2022/04/29/16512471939657.jpg"></video>
-        <section class="h-100 gradient-form"">
+        <section class="h-100 gradient-form">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-xl-10">
