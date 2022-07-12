@@ -62,7 +62,7 @@
                                             <h4 class="mt-1 mb-5 pb-1">TELE CAMPEON</h4>
                                         </div>
 
-                                        <form method="post" action="<%=request.getContextPatch()%>/LoginServlet">
+                                        <form method="post" action="<%=request.getContextPath()%>/LoginServlet">
                                             <p>Porfavor ingrese su cuenta</p>
 
                                             <div class="form-outline mb-4">
@@ -79,8 +79,10 @@
                                             <div class="text-center pt-1 mb-5 pb-1">
                                                 <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">Ingresar</button>
                                             </div>
+                                            <% if (request.getParameter("error")!=null){ %>
                                             <div class="form-outline mb4">Error en usuario o contraseña
                                             </div>
+                                            <% } %>
                                         </form>
 
                                     </div>
