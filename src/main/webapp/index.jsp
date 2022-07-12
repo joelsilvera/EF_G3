@@ -62,7 +62,7 @@
                                             <h4 class="mt-1 mb-5 pb-1">TELE CAMPEON</h4>
                                         </div>
 
-                                        <form method="post" action="<%=request.getContextPath()%>/LoginServlet">
+                                        <form  method="POST" action="<%=request.getContextPath()%>/LoginServlet">
                                             <p>Porfavor ingrese su cuenta</p>
 
                                             <div class="form-outline mb-4">

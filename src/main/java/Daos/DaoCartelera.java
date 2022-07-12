@@ -9,14 +9,19 @@ import java.sql.*;
 import java.util.ArrayList;
 
 public class DaoCartelera extends DaoBase{
+
+
+
     public ArrayList<Cartelera> listaCartelera(int idCine){
         ArrayList<Cartelera> lista = new ArrayList<>();
+
         String sql = "select car.idCartelera,p.idpelicula,p.nombre,ci.idcine, ci.nombre,cad.nombre_comercial, car.`3d`, car.doblada, car.subtitulada, car.horario\n" +
                 "from cine ci\n" +
                 "inner join cadena cad on ci.idcadena=cad.idcadena\n" +
                 "inner join cartelera car on car.idcine= ci.idcine\n" +
                 "inner join pelicula p on p.idpelicula= car.idpelicula\n" +
                 "where ci.idcine=?;";
+
         try (Connection conn = getConection();
              PreparedStatement pstmt = conn.prepareStatement(sql);) {
             pstmt.setInt(1, idCine);

@@ -45,17 +45,17 @@ public class CarteleraServlet extends HttpServlet {
 
         RequestDispatcher view;
 
-        DaoCartelera carteleraDao = new DaoCartelera();
+        DaoCartelera daoCartelera = new DaoCartelera();
         Empleado empleado = (Empleado) request.getSession().getAttribute("empleadoSession");
         switch (action) {
             case "lista":
-                request.setAttribute("listaCartelera", carteleraDao.listaCartelera(empleado.getCine().getIdCine()));
+                request.setAttribute("listaCartelera", daoCartelera.listaCartelera(empleado.getCine().getIdCine()));
                 view = request.getRequestDispatcher("listaCartelera.jsp");
                 view.forward(request, response);
                 break;
             case "agregarNuevaFuncion":
-                request.setAttribute("listaPeliculas", carteleraDao.obtenerListaPeliculas());
-                request.setAttribute("listaCines", carteleraDao.obtenerListaCines());
+                request.setAttribute("listaPeliculas", daoCartelera.obtenerListaPeliculas());
+                request.setAttribute("listaCines", daoCartelera.obtenerListaCines());
                 view = request.getRequestDispatcher("nuevaFuncion.jsp");
                 view.forward(request, response);
                 break;
