@@ -2,6 +2,7 @@ package Servlet;
 
 import Beans.Cartelera;
 import Beans.Empleado;
+import Daos.DaoCartelera;
 
 import javax.servlet.*;
 import javax.servlet.http.*;
@@ -28,7 +29,7 @@ public class CarteleraServlet extends HttpServlet {
                 String doblada = request.getParameter("doblada");
                 String horario = request.getParameter("horario");
 
-                CarteleraDao carteleraDao = new CarteleraDao();
+                DaoCartelera carteleraDao = new DaoCartelera();
                 carteleraDao.guardarFuncion(Integer.parseInt(idPelicula), Integer.parseInt(idCine),
                         Integer.parseInt(tresD), Integer.parseInt(doblada), horario);
                 response.sendRedirect(""); //TODO: agregar sendredirect
@@ -44,11 +45,11 @@ public class CarteleraServlet extends HttpServlet {
 
         RequestDispatcher view;
 
-        CarteleraDao carteleraDao = new CarteleraDao();
+        DaoCartelera carteleraDao = new DaoCartelera();
         Empleado empleado = (Empleado) request.getSession().getAttribute("empleadoSession");
         switch (action) {
             case "lista":
-                request.setAttribute("listaCartelera", carteleraDao.listaCarteleras(empleado.getCine().getIdCine()));
+                request.setAttribute("listaCartelera", carteleraDao.listaCartelera(empleado.getCine().getIdCine()));
                 view = request.getRequestDispatcher("listaCartelera.jsp");
                 view.forward(request, response);
                 break;
